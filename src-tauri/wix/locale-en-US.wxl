@@ -1,0 +1,9 @@
+<WixLocalization Culture="en-us" Codepage="936" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+    <String Id="ProductName">AI牛马灯</String>
+    <String Id="TauriLanguage">1033</String>
+    <String Id="TauriCodepage">936</String>
+    <String Id="LaunchApp">Launch AI牛马灯</String>
+    <String Id="DowngradeErrorMessage">A newer version of AI牛马灯 is already installed.</String>
+    <String Id="PathEnvVarFeature">Add the install location of the AI牛马灯 executable to the PATH system environment variable. This allows the AI牛马灯 executable to be called from any location.</String>
+    <String Id="InstallAppFeature">Installs AI牛马灯.</String>
+</WixLocalization>

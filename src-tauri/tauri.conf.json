@@ -1,0 +1,60 @@
+{
+  "productName": "AI-Niuma-Light",
+  "version": "0.1.0",
+  "identifier": "com.wormcloud.ai-niuma-light",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "AI牛马灯",
+        "width": 220,
+        "height": 34,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: ipc://localhost; style-src 'self' 'unsafe-inline'"
+    },
+    "withGlobalTauri": true
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "wix": {
+        "language": {
+          "zh-CN": {
+            "localePath": "wix/locale-zh-CN.wxl"
+          },
+          "en-US": {
+            "localePath": "wix/locale-en-US.wxl"
+          }
+        }
+      },
+      "nsis": {
+        "languages": [
+          "SimpChinese",
+          "English"
+        ],
+        "installerIcon": "icons/icon.ico",
+        "installMode": "both",
+        "template": "nsis/custom-installer.nsi"
+      }
+    }
+  }
+}

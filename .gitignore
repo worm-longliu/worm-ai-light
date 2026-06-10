@@ -1,0 +1,20 @@
+# Rust / Tauri build output
+src-tauri/target/
+src-tauri/gen/
+
+# Temporary files
+temp_tray.txt
+
+# Backup files
+*.backup.*
+*~
+*.bak
+
+# Environment variables
+.env
+.env.*
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

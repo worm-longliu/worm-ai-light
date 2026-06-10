@@ -1,0 +1,109 @@
+* { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+
+body {
+  width: 100vw; height: 100vh;
+  overflow: hidden; background: transparent;
+  -webkit-app-region: drag;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.indicator {
+  width: 26px; height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.light {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  pointer-events: none;
+}
+
+.indicator.stopped .light {
+  background-color: #9E9E9E;
+  box-shadow: 0 0 8px rgba(158, 158, 158, 0.4);
+}
+
+.indicator.working .light {
+  background-color: #4CAF50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+}
+
+.indicator.warning .light {
+  background-color: #FFC107;
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
+  animation: flash 0.5s ease-in-out infinite;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.info {
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.info:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#status-text {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 26px;
+  pointer-events: none;
+}
+
+.color-picker {
+  position: fixed; bottom: 4px; right: 4px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 8px; padding: 8px;
+  display: flex; flex-direction: column; gap: 4px; z-index: 100;
+}
+
+.color-picker.hidden { display: none; }
+
+.picker-row { display: flex; align-items: center; gap: 6px; }
+.picker-row label { color: #fff; font-size: 11px; min-width: 40px; }
+.picker-row input[type="color"] { width: 28px; height: 20px; border: none; padding: 0; cursor: pointer; }
+
+/* 轻提示 Toast */
+.toast {
+  position: fixed;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+  white-space: nowrap;
+  z-index: 999;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.toast.hidden { opacity: 0; }

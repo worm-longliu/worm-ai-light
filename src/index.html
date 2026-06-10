@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AI牛马灯</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <div id="indicator" class="indicator stopped" data-state="stopped" title="点击切换状态">
+      <div class="light"></div>
+    </div>
+    <div id="info" class="info" title="点击配置监控目录">
+      <span id="status-text">未配置监控目录</span>
+    </div>
+  </div>
+  <div id="color-picker" class="color-picker hidden">
+    <div class="picker-row"><label>工作中</label><input type="color" id="color-working" value="#4CAF50"></div>
+    <div class="picker-row"><label>警告</label><input type="color" id="color-stopped" value="#FFC107"></div>
+    <div class="picker-row"><label>终止</label><input type="color" id="color-idle" value="#9E9E9E"></div>
+    <div class="picker-row" style="margin-top:4px;border-top:1px solid rgba(255,255,255,0.15);padding-top:4px">
+      <label style="min-width:auto;font-size:10px">开机自启</label>
+      <input type="checkbox" id="autostart-toggle" style="accent-color:#4CAF50;cursor:pointer">
+    </div>
+    <div class="picker-row" style="margin-top:4px;border-top:1px solid rgba(255,255,255,0.15);padding-top:4px">
+      <label style="min-width:auto;font-size:10px">超时(秒)</label>
+      <input type="number" id="timeout-input" min="5" max="3600" value="60" style="width:50px;background:#555;border:none;color:#fff;font-size:11px;padding:1px 3px;border-radius:2px">
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
