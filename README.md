@@ -12,7 +12,7 @@ Windows 桌面悬浮灯，通过监控指定目录的文件变更，实时反馈
 扫描下方二维码关注我的抖音账号，获取更多 AI 编程效率工具的玩法和视频演示 👇
 
 <p align="center">
-  <img src="douyin.jpg" alt="抖音扫码关注" width="300" />
+  <img src="./douyin.jpg" alt="抖音扫码关注" width="300" />
 </p>
 
 ## 使用说明
