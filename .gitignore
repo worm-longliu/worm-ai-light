@@ -14,6 +14,9 @@ temp_tray.txt
 .env
 .env.*
 
+# douyin videos
+douyin/
+
 # OS metadata
 Thumbs.db
 Desktop.ini
